@@ -8,3 +8,11 @@ export function updateDisplay(minutes, seconds) {
   el.minutes.textContent = String(minutes).padStart(2, "0");
   el.seconds.textContent = String(seconds).padStart(2, "0");
 }
+
+export function countdown() {
+  if (!state.isRunning) {
+    return;
+  }
+
+  setTimeout(() => countdown(), 1000);
+}
